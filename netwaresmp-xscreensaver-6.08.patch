@@ -1,6 +1,6 @@
-diff -Naur xscreensaver-6.08/driver/XScreenSaver.ad.in xscreensaver-6.08-new/driver/XScreenSaver.ad.in
---- xscreensaver-6.08/driver/XScreenSaver.ad.in	2023-10-10 17:24:06.551773885 -0700
-+++ xscreensaver-6.08-new/driver/XScreenSaver.ad.in	2024-02-20 23:52:00.952904019 -0800
+diff -Naur xscreensaver-6.08-orig/driver/XScreenSaver.ad.in xscreensaver-6.08/driver/XScreenSaver.ad.in
+--- xscreensaver-6.08-orig/driver/XScreenSaver.ad.in	2023-10-10 17:24:06.551773885 -0700
++++ xscreensaver-6.08/driver/XScreenSaver.ad.in	2024-02-20 23:52:00.952904019 -0800
 @@ -413,6 +413,7 @@
  				wander --root				    \n\
  				xflame --root				    \n\
@@ -17,9 +17,9 @@ diff -Naur xscreensaver-6.08/driver/XScreenSaver.ad.in xscreensaver-6.08-new/dri
  *hacks.pacman.name:         Pac-Man
  *hacks.papercube.name:      Paper Cube
  *hacks.photopile.name:      Photo Pile
-diff -Naur xscreensaver-6.08/hacks/config/netwaresmp.xml xscreensaver-6.08-new/hacks/config/netwaresmp.xml
---- xscreensaver-6.08/hacks/config/netwaresmp.xml	1969-12-31 16:00:00.000000000 -0800
-+++ xscreensaver-6.08-new/hacks/config/netwaresmp.xml	2024-02-20 23:52:32.773315154 -0800
+diff -Naur xscreensaver-6.08-orig/hacks/config/netwaresmp.xml xscreensaver-6.08/hacks/config/netwaresmp.xml
+--- xscreensaver-6.08-orig/hacks/config/netwaresmp.xml	1969-12-31 16:00:00.000000000 -0800
++++ xscreensaver-6.08/hacks/config/netwaresmp.xml	2024-02-21 13:19:26.580364904 -0800
 @@ -0,0 +1,39 @@
 +<?xml version="1.0" encoding="ISO-8859-1"?>
 +
@@ -60,9 +60,9 @@ diff -Naur xscreensaver-6.08/hacks/config/netwaresmp.xml xscreensaver-6.08-new/h
 +Netware SMP screensaver.   
 +  </_description>
 +</screensaver>
-diff -Naur xscreensaver-6.08/hacks/Makefile.in xscreensaver-6.08-new/hacks/Makefile.in
---- xscreensaver-6.08/hacks/Makefile.in	2023-10-10 17:37:05.846255309 -0700
-+++ xscreensaver-6.08-new/hacks/Makefile.in	2024-02-20 23:52:00.952904019 -0800
+diff -Naur xscreensaver-6.08-orig/hacks/Makefile.in xscreensaver-6.08/hacks/Makefile.in
+--- xscreensaver-6.08-orig/hacks/Makefile.in	2023-10-10 17:37:05.846255309 -0700
++++ xscreensaver-6.08/hacks/Makefile.in	2024-02-20 23:52:00.952904019 -0800
 @@ -111,7 +111,7 @@
  		  demon.c loop.c t3d.c penetrate.c deluxe.c compass.c \
  		  squiral.c xflame.c wander.c spotlight.c critical.c \
@@ -109,9 +109,9 @@ diff -Naur xscreensaver-6.08/hacks/Makefile.in xscreensaver-6.08-new/hacks/Makef
  petri:		petri.o		$(HACK_OBJS) $(COL) $(SPL)
  	$(CC_HACK) -o $@ $@.o	$(HACK_OBJS) $(COL) $(SPL) $(HACK_LIBS)
  
-diff -Naur xscreensaver-6.08/hacks/netwaresmp.c xscreensaver-6.08-new/hacks/netwaresmp.c
---- xscreensaver-6.08/hacks/netwaresmp.c	1969-12-31 16:00:00.000000000 -0800
-+++ xscreensaver-6.08-new/hacks/netwaresmp.c	2024-02-20 23:52:16.016098643 -0800
+diff -Naur xscreensaver-6.08-orig/hacks/netwaresmp.c xscreensaver-6.08/hacks/netwaresmp.c
+--- xscreensaver-6.08-orig/hacks/netwaresmp.c	1969-12-31 16:00:00.000000000 -0800
++++ xscreensaver-6.08/hacks/netwaresmp.c	2024-02-21 13:19:09.974154353 -0800
 @@ -0,0 +1,963 @@
 +/***************************************************************************
 +*
@@ -1076,16 +1076,16 @@ diff -Naur xscreensaver-6.08/hacks/netwaresmp.c xscreensaver-6.08-new/hacks/netw
 +};
 +
 +XSCREENSAVER_MODULE ("NetwareSMP", netwaresmp)
-diff -Naur xscreensaver-6.08/hacks/netwaresmp.man xscreensaver-6.08-new/hacks/netwaresmp.man
---- xscreensaver-6.08/hacks/netwaresmp.man	1969-12-31 16:00:00.000000000 -0800
-+++ xscreensaver-6.08-new/hacks/netwaresmp.man	2024-02-20 23:52:20.560157354 -0800
-@@ -0,0 +1,60 @@
+diff -Naur xscreensaver-6.08-orig/hacks/netwaresmp.man xscreensaver-6.08/hacks/netwaresmp.man
+--- xscreensaver-6.08-orig/hacks/netwaresmp.man	1969-12-31 16:00:00.000000000 -0800
++++ xscreensaver-6.08/hacks/netwaresmp.man	2024-02-21 13:19:16.578238090 -0800
+@@ -0,0 +1,63 @@
 +.TH XScreenSaver 1 "27-Apr-97" "X Version 11"
 +.SH NAME
 +netwaresmp - Novell Netware SMP console screensaver
 +.SH SYNOPSIS
 +.B netwaresmp
-+[\-cpus \fI number of cpus\fP] [-speedup \fI divisor\fP] [-wormsize \fI pixels\fP] [\-display \fIhost:display.screen\fP] [\-foreground \fIcolor\fP] [\-background \fIcolor\fP] [\-window] [\-root] [\-mono] [\-install] [\-visual \fIvisual\fP] 
++[\-cpus \fI number of cpus\fP] [-speedup \fI divisor\fP] [-wormsize \fI pixels\fP] [\-display \fIhost:display.screen\fP] [\-foreground \fIcolor\fP] [\-background \fIcolor\fP] [\-window] [\-root] [\-mono] [\-circles] [\-install] [\-visual \fIvisual\fP] 
 +.SH DESCRIPTION
 +The \fInetwaresmp\fP screensaver written by Jeffrey Merkey <jeffmerkey@gmail.com> and Cosimo Streppone <cosimo@cpan.org>, based on PopSquares, Deco hacks, loadsnake, and Novell's Netware SMP.  The original Netware SMP screensaver was written by Jeffrey Merkey at Novell in 1994.  This version is a rewrite of the original which functions exactly the same way as it did in Netware SMP.  Each worm represents a running system cpu processor.  As system utilization increases for each cpu, the corresponding worm for that processor gets longer and moves more quicky across the screen.  As overall system load increases, all the worms slightly increase in speed.  This screensaver is very useful for monitoring cpu loading in a system since you can visually see processor utilization and loading by simply observing the worms. 
 +.SH OPTIONS
@@ -1109,6 +1109,9 @@ diff -Naur xscreensaver-6.08/hacks/netwaresmp.man xscreensaver-6.08-new/hacks/ne
 +.TP 8
 +.B \-mono 
 +If on a color display, pretend we're on a monochrome display.
++.TP 8
++.B \-circles 
++Use circles instead of squares to create the worms.
 +.TP 8
 +.B \-install
 +Install a private colormap for the window.
@@ -1140,9 +1143,9 @@ diff -Naur xscreensaver-6.08/hacks/netwaresmp.man xscreensaver-6.08-new/hacks/ne
 +based on PopSquares, Deco hacks, loadsnake, and Novell's Netware SMP.  The 
 +original Netware SMP screensaver was written by Jeffrey Merkey at Novell in
 +1994.  
-diff -Naur xscreensaver-6.08/xscreensaver.spec xscreensaver-6.08-new/xscreensaver.spec
---- xscreensaver-6.08/xscreensaver.spec	2023-10-10 17:24:04.989688938 -0700
-+++ xscreensaver-6.08-new/xscreensaver.spec	2024-02-20 23:52:00.953904032 -0800
+diff -Naur xscreensaver-6.08-orig/xscreensaver.spec xscreensaver-6.08/xscreensaver.spec
+--- xscreensaver-6.08-orig/xscreensaver.spec	2023-10-10 17:24:04.989688938 -0700
++++ xscreensaver-6.08/xscreensaver.spec	2024-02-20 23:52:00.953904032 -0800
 @@ -1,10 +1,13 @@
  %define	name xscreensaver
  %define	version 6.08
@@ -1154,7 +1157,7 @@ diff -Naur xscreensaver-6.08/xscreensaver.spec xscreensaver-6.08-new/xscreensave
  Name:		%{name}
  Version:	%{version}
 -Release:	1
-+Release:	2
++Release:	4
  Epoch:		1
  License:	BSD
  Group:		Amusements/Graphics
