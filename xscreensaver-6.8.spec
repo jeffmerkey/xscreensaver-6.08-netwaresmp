@@ -7,13 +7,14 @@
 Summary:	X screen saver and locker
 Name:		%{name}
 Version:	%{version}
-Release:	4
+Release:	5
 Epoch:		1
 License:	BSD
 Group:		Amusements/Graphics
 URL:		https://www.jwz.org/xscreensaver/
 Source0:	https://www.jwz.org/xscreensaver/xscreensaver-%{version}.tar.gz
 Vendor:		Jamie Zawinski <jwz@jwz.org>
+Packager:	Jeffrey Merkey <jeffmerkey@gmail.com>
 Buildroot:	%{_tmppath}/%{name}-root
 
 Patch1:           netwaresmp-xscreensaver-6.08.patch
