@@ -38,17 +38,17 @@ binary installation and Source RPM packages (SRPMS) and Debbuild SDEB packages f
 RPM and DEB packages for each release include a binary architecture specific package
 and a source package which can be downloaded and built/rebuilt and which contains the source code.
 
-For example, the release v6.08-4 contains the following packages in the release section:
+For example, the release v6.08-5 contains the following packages in the release section:
 
 ### **RPM Based Packages (RedHat, CentOS, SuSe)**
 
-- [xscreensaver-netwaresmp-6.08-4.src.rpm](https://github.com/jeffmerkey/netware-xscreensaver/releases/download/v6.08-4/xscreensaver-netwaresmp-6.08-4.src.rpm)
-- [xscreensaver-netwaresmp-6.08-4.x86_64.rpm](https://github.com/jeffmerkey/netware-xscreensaver/releases/download/v6.08-4/xscreensaver-netwaresmp-6.08-4.x86_64.rpm)
+- [xscreensaver-netwaresmp-6.08-5.src.rpm](https://github.com/jeffmerkey/netware-xscreensaver/releases/download/v6.08-5/xscreensaver-netwaresmp-6.08-5.src.rpm)
+- [xscreensaver-netwaresmp-6.08-5.x86_64.rpm](https://github.com/jeffmerkey/netware-xscreensaver/releases/download/v6.08-5/xscreensaver-netwaresmp-6.08-5.x86_64.rpm)
 
 ### **Debian Based Packages (Debian, Ubuntu)**
 
-- [xscreensaver-netwaresmp-1.6.08-4.sdeb](https://github.com/jeffmerkey/netware-xscreensaver/releases/download/v6.08-4/xscreensaver-netwaresmp-1.6.08-4.sdeb)
-- [xscreensaver_netwaresmp_1.6.08-4_amd64.deb](https://github.com/jeffmerkey/netware-xscreensaver/releases/download/v6.08-4/xscreensaver_netwaresmp_1.6.08-4_amd64.deb)
+- [xscreensaver-netwaresmp-1.6.08-5.sdeb](https://github.com/jeffmerkey/netware-xscreensaver/releases/download/v6.08-5/xscreensaver-netwaresmp-1.6.08-5.sdeb)
+- [xscreensaver_netwaresmp_1.6.08-5_amd64.deb](https://github.com/jeffmerkey/netware-xscreensaver/releases/download/v6.08-5/xscreensaver_netwaresmp_1.6.08-5_amd64.deb)
 
 ### **Removing a Previous Installation of Outdated Versions of XScreensaver**
 
@@ -86,7 +86,7 @@ apt-get autoremove xscreensaver
 
 To install the binary package with the RPM package manager:
 ```sh
-rpm -i xscreensaver-netwaresmp-6.08-4.x86_64.rpm
+rpm -i xscreensaver-netwaresmp-6.08-5.x86_64.rpm
 ```
 
 To deinstall the RPM binary package:
@@ -96,7 +96,7 @@ rpm -e xscreensaver-netwaresmp
 
 To install the binary package with the Debian dpkg package manager for amd64:
 ```sh
-dpkg -i xscreensaver_netwaresmp_1.6.08-4_amd64.deb
+dpkg -i xscreensaver_netwaresmp_1.6.08-5_amd64.deb
 ```
 
 To deinstall the Debian dpkg binary package:
@@ -108,7 +108,7 @@ dpkg -r xscreensaver_netwaresmp
 
 To install the source package with the RPM package manager:
 ```sh
-rpm -i xscreensaver-netwaresmp-6.08-4.src.rpm
+rpm -i xscreensaver-netwaresmp-6.08-5.src.rpm
 ```
 
 *(Note: rpm installs the source code files in /root/rpmbuild/ as top directory for RedHat and CentOS
@@ -116,7 +116,7 @@ platforms.  SuSe platforms install the source code files in /usr/src/packages/)*
 
 To install the source package with the Debbuild package tool:
 ```sh
-debbuild -i xscreensaver-netwaresmp-1.6.08-4.sdeb
+debbuild -i xscreensaver-netwaresmp-1.6.08-5.sdeb
 ```
 *(Note: Debbuild installs the source code files in /root/debbuild/ as top directory)*
 
@@ -161,8 +161,15 @@ _netwaresmp_ accepts the following options:
   Draw on the root window.
 * **--mono**  
   If on a color display, pretend we're on a monochrome display.
-* **--circles**  
-  Use circles instead of squares to create the worms.
+* **--shape**  
+  Specify worm drawing mode:  
+  0 for squares, 
+  1 for circles, 
+  2 for snipes (from the NetWare game "Snipes", the first distributed network game run over a local area network), 
+  3 for triangles, 
+  4 for classic (retro text-based screensaver from NetWare SMP), 
+  5 for arrows
+  6 for 3D balls, 
 * **--install**  
   Install a private colormap for the window.
 * **--visual _visual_**  
@@ -188,7 +195,7 @@ Most Linux distributions use an outdated xscreensaver program which lacks curren
 ### Installing the xscreensaver-6.08 Code Base
 
 You can clone the screensaver-6.08-netwaresmp code base from github as follows using
-the 'git clone' command, or you can download the xscreensaver-6.08-netwaresmp-6.08-4.tar.gz
+the 'git clone' command, or you can download the netware-xscreensaver-6.08-5.tar.gz
 archive directly from github, then untar and extract the files.
 
 #### Cloning from Github
@@ -441,15 +448,13 @@ Copyright © 1994-2024 by Jamie Zawinski, Jeffrey Merkey, Cosimo Streppone,
 and others.  Permission to use, copy, modify, distribute, and sell this software
 and its documentation for any purpose is hereby granted without fee, provided 
 that the above copyright notice appear in all copies and that both that 
-copyright notice and this permission notice appear in supporting documentation. No representations are made about the suitability of this software for any 
+copyright notice and this permission notice appear in supporting documentation. 
+No representations are made about the suitability of this software for any 
 purpose.  It is provided "as is" without express or implied warranty.
 
 ## **Authors**
 
-Jeffrey Merkey &lt;[jeffmerkey@gmail.com](mailto:jeffmerkey@gmail.com)&gt; and Cosimo Streppone &lt;cosimo@cpan.org&gt;, 
-based on PopSquares, Deco hacks, loadsnake, and Novell's Netware SMP.  The 
-original Netware SMP screensaver was written by Jeffrey Merkey at Novell in
-1994.  
+Jeffrey Merkey &lt;[jeffmerkey@gmail.com](mailto:jeffmerkey@gmail.com)&gt;, Cosimo Streppone &lt;[cosimo@cpan.org](mailto:cosimo@cpan.org)&gt; and Jamie Zawinski &lt;[jwz@jwz.org](mailto:jwz@jwz.org)&gt; based on PopSquares, Deco hacks, loadsnake, and Novell's Netware SMP.  The original Netware SMP screensaver was written by Jeffrey Merkey at Novell in 1994.  
 
 ## **Issues / problems / help**
 
